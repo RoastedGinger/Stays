@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">OrganicHomeStays</string>
+    <string name="todo">TODO</string>
+    <string name="category">Category:</string>
+    <string name="price">Price</string>
+    <string name="Rs">\u20B9</string>
+    <string name="pincode">Pincode</string>
+    <string name="upload">Upload</string>
+    <string name="address_of_homestay">Address of HomeStay</string>
+    <string name="enter_homestay_name">Enter HomeStay Name</string>
+    <string name="todoj">TODO</string>
+</resources>

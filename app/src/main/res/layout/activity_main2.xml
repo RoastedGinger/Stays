@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    tools:context="com.handshake.pritz.organichome.Main2Activity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/lod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Loading Image..."
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="3dp"
+        android:paddingBottom="8dp"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/himage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/image_two" />
+
+            <TextView
+                android:id="@+id/hname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/himage"
+                android:gravity="center"
+                android:paddingLeft="@dimen/album_title_padding"
+                android:paddingRight="@dimen/album_title_padding"
+                android:paddingTop="@dimen/album_title_padding"
+                 android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/haddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hname"
+                android:drawableLeft="@drawable/loc"
+                android:gravity="left"
+                android:paddingBottom="@dimen/songs_count_padding_bottom"
+                android:paddingRight="@dimen/album_title_padding"
+                 android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="3dp"
+        android:padding="4dp"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hname"
+                android:drawableLeft="@drawable/cash"
+                android:gravity="left"
+                android:paddingBottom="@dimen/songs_count_padding_bottom"
+                android:paddingRight="@dimen/album_title_padding"
+                android:text="AmountPayable "
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/rupee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Rs"
+                android:layout_below="@id/hname"
+                android:gravity="center"
+                android:padding="5dp"
+                 android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/hprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:layout_below="@id/hname"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:padding="4dp"
+        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="@color/cardview_light_background">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f7dd31"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Key Features"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/wifi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/wifi"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Free Wifi"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/power"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Power Supply"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/localcafe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/localcafe"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Local Cafe"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/tv"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Tv Availabe"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Laundry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/lau"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Laundry"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Parking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/park"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Parking"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Geyser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/gey"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Geyser"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/food"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Food"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:padding="4dp"
+        app:cardBackgroundColor="@color/cardview_light_background">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/amountcb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#0c5e03"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Please Read"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totlw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingBottom="@dimen/songs_count_padding_bottom"
+                android:paddingRight="@dimen/album_title_padding"
+                android:text="  * Guest need valid ID proof"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/toctlw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingBottom="@dimen/songs_count_padding_bottom"
+                android:paddingRight="@dimen/album_title_padding"
+                android:text="  * Couples are welcome"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <Button
+        android:id="@+id/book"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bookbtn"
+        android:text="Book"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center"
+        android:paddingBottom="@dimen/songs_count_padding_bottom"
+        android:paddingRight="@dimen/album_title_padding"
+        android:text="This homestay is servised under the trade name of Pritam Shah as per the quality standards of Organic Homestays"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>
+
+ </LinearLayout>
