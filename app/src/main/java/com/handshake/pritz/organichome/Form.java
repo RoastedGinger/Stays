@@ -36,6 +36,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
     private static Calendar calendar,calendar2;
    static TextView p, q,pop,pol;
    public static int jk,g;
+  static int psprice,bigprice;
    Button pay;
      Spinner spinner;
     public static String a;
@@ -50,20 +51,26 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
 
         p = findViewById(R.id.to);
         pol = findViewById(R.id.pol);
-        pop = findViewById(R.id.popl);
- pay=findViewById(R.id.Pay);
+        pop = findViewById(R.id.ppric);
+        pay=findViewById(R.id.Pay);
+        Bundle bundle = getIntent().getExtras();
+        final String price = bundle.getString("price");
+        try {
+              psprice= Integer.parseInt(price);
+        } catch(NumberFormatException nfe) {
+            System.out.println("Could not parse " + nfe);
+        }
+        pop.setText(price);
+
         pay.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 
         g= getDaysDifference(calendar, calendar2);
         a= String.valueOf(g);
-        pop.setText(a+"Days");
+        pol.setText(a+"\tNights");
 
-        int po=jk*g*100;
-        String plp= String.valueOf(g);
-        pol.setText(plp);
-
+        pop.setText(String.valueOf(bigprice));
     }
 });
         q = findViewById(R.id.from);
@@ -76,9 +83,11 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
                 String item = adapterView.getItemAtPosition(i).toString();
                 try {
                     jk = Integer.parseInt(item);
+                    bigprice=psprice*jk*g ;
                 } catch(NumberFormatException nfe) {
                     System.out.println("Could not parse " + nfe);
                 }
+                pop.setText(String.valueOf(bigprice));
 
                 // Showing selected spinner item
                 Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
@@ -94,7 +103,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
         });
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
-        categories.add("No. of Rooms");
+
         categories.add("1");
         categories.add("2");
         categories.add("3");
@@ -116,12 +125,15 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
         public void onClick(View v) {
             int id = v.getId();
             if (id == R.id.to) {
+                if(!mDatePickerDialogFragment.isAdded())
+                {
                 mDatePickerDialogFragment.setFlag(DatePickerDialogFragment.FLAG_START_DATE);
                 mDatePickerDialogFragment.show(getSupportFragmentManager(), "datePicker");
-            } else if (id == R.id.from) {
+            }} else if (id == R.id.from) {
+                if(!mDatePickerDialogFragment.isAdded()){
                 mDatePickerDialogFragment.setFlag(DatePickerDialogFragment.FLAG_END_DATE);
                 mDatePickerDialogFragment.show(getSupportFragmentManager(), "datePicker");
-            }
+            }}
         }
 
     public   static class DatePickerDialogFragment extends DialogFragment implements
@@ -152,18 +164,27 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
 
 
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-             calendar = Calendar.getInstance();
-            calendar.set(year, monthOfYear, dayOfMonth);
 
-            calendar2 = Calendar.getInstance();
-            calendar2.set(year, monthOfYear, dayOfMonth);
+
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd",Locale.US);
             if (flag == FLAG_START_DATE) {
+                calendar = Calendar.getInstance();
+                calendar.set(year, monthOfYear, dayOfMonth);
                 p.setText(format.format(calendar.getTime()));
+
+
+
             } else if (flag == FLAG_END_DATE) {
+                calendar2 = Calendar.getInstance();
+                calendar2.set(year, monthOfYear, dayOfMonth);
                 q.setText(format.format(calendar2.getTime()));
             }
 
+            g= getDaysDifference(calendar, calendar2);
+            a= String.valueOf(g);
+            pol.setText(a+"\tNights");
+             bigprice=psprice*jk*g ;
+            pop.setText(String.valueOf(bigprice));
 
         }
 
@@ -171,12 +192,16 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
         { long diff;
             if(calendar1==null||calendar2==null)
                 return 1;
+            if(calendar1.equals(calendar2))
+                return 1;
+            if (calendar2.equals(calendar1))
+                return 1;
             else {
                 diff = calendar2.getTimeInMillis() - calendar1.getTimeInMillis();
                 float dayCount = (float) diff / (24 * 60 * 60 * 1000);
-
                 return ((int) dayCount);
             }
         }
     }
+
     }

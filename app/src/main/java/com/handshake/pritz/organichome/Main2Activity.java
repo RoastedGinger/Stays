@@ -90,10 +90,16 @@ String aname,aaddress,aimage,aprice;
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Main2Activity.this, message, Toast.LENGTH_LONG).show();
+                if(aprice!=null) {
+                    Toast.makeText(Main2Activity.this, message, Toast.LENGTH_LONG).show();
 
-                Intent i = new Intent(Main2Activity.this, Form.class);
-                startActivity(i);
+                    Intent intent = new Intent(Main2Activity.this, Form.class);
+
+                    intent.putExtra("kyi", message);
+                    intent.putExtra("kyiroot", "EastHomestays");
+                    intent.putExtra("price", aprice);
+                    startActivity(intent);
+                }
 
             }
         });

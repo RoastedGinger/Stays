@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/cardview_dark_background"
             android:orientation="vertical"
             android:padding="15dp">
 
@@ -84,13 +83,14 @@
 
     <TextView
         android:id="@+id/popl"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/card_view5"
-         android:padding="10dp"
+        android:layout_marginTop="6dp"
         android:gravity="center"
+        android:padding="10dp"
         android:text="No. of Rooms"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold" />
@@ -99,8 +99,9 @@
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/popl"
-        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/popl"
+        android:layout_toEndOf="@+id/popl"
+        android:layout_toRightOf="@+id/popl"
         android:paddingBottom="15dp"
         android:paddingEnd="15dp"
         android:paddingLeft="15dp"
@@ -113,12 +114,55 @@
         android:id="@+id/pol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/popl"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/spinner"
         android:background="@drawable/btnbac"
         android:padding="10dp"
-        android:text="PRICE"
+        android:text="Nights"
         android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/popl"
+        android:layout_marginTop="58dp"
+        android:drawableLeft="@drawable/cash"
+        android:gravity="left"
+        android:paddingBottom="@dimen/songs_count_padding_bottom"
+        android:paddingRight="@dimen/album_title_padding"
+        android:text="AmountPayable "
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/rupee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/amount"
+        android:layout_toEndOf="@+id/amount"
+        android:layout_toRightOf="@+id/amount"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/Rs"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ppric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/amount"
+        android:layout_toEndOf="@+id/rupee"
+        android:layout_toRightOf="@+id/rupee"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
         android:textStyle="bold" />
 </RelativeLayout>
