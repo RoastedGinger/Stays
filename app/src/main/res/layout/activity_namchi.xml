@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.handshake.pritz.organichome.East">
+    tools:context="com.handshake.pritz.organichome.Namchi">
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -25,7 +25,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:clipToPadding="false"
-        android:dividerHeight="2.0sp"></android.support.v7.widget.RecyclerView>
+        android:dividerHeight="2.0sp">
+    </android.support.v7.widget.RecyclerView>
 
     <Button
         android:id="@+id/addmore"

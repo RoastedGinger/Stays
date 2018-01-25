@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <group android:orderInCategory="100" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.handshake.pritz.organichome.MainActivity">
+
     <item
         android:id="@+id/con"
-        android:orderInCategory="101"
-        android:title="Contact Us"/>
+         android:title="Contact Us"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/mail"
-        android:orderInCategory="101"
-        android:title="Mail Us"
+         android:title="Mail Us"
         app:showAsAction="never" />
     <item
         android:id="@+id/exit"
-        android:orderInCategory="101"
-        android:title="Exit"
+         android:title="Exit"
         app:showAsAction="never" />
     <item
         android:id="@+id/abt"
-        android:orderInCategory="101"
-        android:title="About"
+         android:title="About"
         app:showAsAction="never" />
 </menu>

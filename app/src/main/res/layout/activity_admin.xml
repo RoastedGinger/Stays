@@ -63,37 +63,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="10dip"
-                    android:text="PinCode of Homestay"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/pin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/editbac"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:hint="@string/pincode"
-                    android:inputType="phone"
-                    android:paddingBottom="15dp"
-                    android:paddingEnd="15dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingStart="15dp"
-                    android:paddingTop="15dp"
-                    android:textColor="@color/colorAccent" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dip"
                     android:text="Address of Homestay"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
+
                 <EditText
-                    android:id="@+id/address"
+                    android:id="@+id/Haddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/editbac"

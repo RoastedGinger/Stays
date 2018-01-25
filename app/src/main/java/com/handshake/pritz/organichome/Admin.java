@@ -16,6 +16,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -28,27 +30,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Admin extends AppCompatActivity {
-    EditText a, b, c, d;
+    EditText a, b, d;
     Spinner spinner;
     public ImageButton imageButton;
     Button button;
     String tag;
+    private  FirebaseAuth mauth;
+    private FirebaseUser currentuser;
     Uri img = null;
+    String root;
     private static final int GALLERY_REQUEST = 1;
     private StorageReference mStorageRefe = FirebaseStorage.getInstance().getReference();
     private ProgressDialog progressDialog;
-    final DatabaseReference mref = FirebaseDatabase.getInstance().getReference().child("EastHomestays");
+     DatabaseReference mref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        // Spinner element
+        mauth= FirebaseAuth.getInstance();
+
+        if(getIntent().getExtras()!=null) {
+            Bundle bundle = getIntent().getExtras();
+             root = bundle.getString("keyroot");
+            mref = FirebaseDatabase.getInstance().getReference().child(root);
+        }
+
+        currentuser=mauth.getCurrentUser();
+
          spinner = (Spinner) findViewById(R.id.spinner);
         a =  findViewById(R.id.name);
-       b =  findViewById(R.id.address);
-        c =   findViewById(R.id.pin);
-        d =   findViewById(R.id.price);
+       b =  findViewById(R.id.Haddress);
+         d =   findViewById(R.id.price);
         imageButton =  findViewById(R.id.hotelpic);
         button =   findViewById(R.id.send);
         progressDialog = new ProgressDialog(this);
@@ -74,7 +87,7 @@ public class Admin extends AppCompatActivity {
 
             }
 
-            @Override
+
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
@@ -104,19 +117,17 @@ public class Admin extends AppCompatActivity {
                 }
                 if (b.getText().toString().trim().equalsIgnoreCase("")) {
                     b.setError("This field can not be blank");
-                }
-                if (c.getText().toString().trim().equalsIgnoreCase("")) {
-                    c.setError("This field can not be blank");
+
                 }
                 if (d.getText().toString().trim().equalsIgnoreCase("")) {
                     d.setError("This field can not be blank");
                 }
                 final String name = a.getText().toString();
-                final String address = b.getText().toString();
-                final String price = c.getText().toString();
-                final String pin = d.getText().toString();
+                final String jaddress = b.getText().toString();
+                final String price = d.getText().toString();
 
-                if ((img != null && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(pin))) {
+
+                if ((img != null && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(jaddress) && !TextUtils.isEmpty(price))) {
                    progressDialog.setMessage("Uploading Please Wait...");
                     progressDialog.show();
                     progressDialog.setCancelable(false);
@@ -128,9 +139,10 @@ public class Admin extends AppCompatActivity {
                           DatabaseReference databaseReference=mref.push();
 
                           databaseReference.child("Name").setValue(name);
-                            databaseReference.child("Address").setValue(address+"\t"+pin);
+                            databaseReference.child("Homeaddress").setValue(jaddress);
                             databaseReference.child("Price").setValue(price);
                             databaseReference.child("Effi").setValue(tag);
+                            databaseReference.child("postid").setValue(currentuser.getUid());
                             databaseReference.child("HomestayPic").setValue(downloaduri.toString());
                             progressDialog.dismiss();
                             Intent i=new Intent(Admin.this,MainActivity.class);

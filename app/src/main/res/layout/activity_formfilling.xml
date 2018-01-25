@@ -15,153 +15,115 @@
             android:padding="15dp"
             android:orientation="vertical">
             <ImageView
-                android:id="@+id/himage"
+                android:id="@+id/Apic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:cropToPadding="true"
+                android:background="@color/colorPrimaryDark"
+                android:contentDescription="@string/todo"
+                android:elevation="1dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/image_two" />
+                />
 
+            <TextView
+                android:id="@+id/hid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dip"
+                 android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hadr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dip"
+                 android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hpr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dip"
+                 android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/hchin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dip"
+                 android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/hcout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dip"
+                 android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/hname"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/himage"
-                android:gravity="center"
-                android:paddingLeft="@dimen/album_title_padding"
-                android:paddingRight="@dimen/album_title_padding"
-                android:paddingTop="@dimen/album_title_padding"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dip"
+                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/haddress"
-                android:layout_width="match_parent"
+                android:id="@+id/hphone"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/hname"
-                android:drawableLeft="@drawable/loc"
-                android:gravity="left"
-                android:paddingBottom="@dimen/songs_count_padding_bottom"
-                android:paddingRight="@dimen/album_title_padding"
-                android:textColor="@android:color/black"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dip"
+                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
+
             <TextView
-                android:layout_width="fill_parent"
+                android:id="@+id/hemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dip"
+                 android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/noofroom"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dip"
-                android:text="Full Name"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/editbac"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="Full Name"
-                android:inputType="textPersonName"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
-                android:textColor="@color/colorAccent" />
+                 android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
 
             <TextView
-                android:layout_width="fill_parent"
+                android:id="@+id/noofpeople"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dip"
-                android:text="Phone"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/pin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/editbac"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="@string/pincode"
-                android:inputType="phone"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
-                android:textColor="@color/colorAccent" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="10dip"
-                android:text="Email"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/editbac"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
-                android:textColor="@color/colorAccent" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="10dip"
-                android:text="Price"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/editbac"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="@string/price"
-                android:inputType="phone"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
-                android:textColor="@color/colorAccent" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="10dip"
-                android:text="@string/category"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
+                 android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
 
 
             <Button
@@ -170,8 +132,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/btnbac"
                 android:text="Pay"
-                android:onClick="onClick"
-                android:textColor="@android:color/white" />
+                 android:textColor="@android:color/white" />
 
         </LinearLayout>
 

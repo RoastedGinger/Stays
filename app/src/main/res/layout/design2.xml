@@ -60,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="#0ea404"
-                        android:drawableLeft="@drawable/rate"
+                        android:drawableLeft="@drawable/cash"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="Good"

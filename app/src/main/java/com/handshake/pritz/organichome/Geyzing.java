@@ -8,15 +8,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,21 +24,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-
-
-public class East extends AppCompatActivity {
+public class Geyzing extends AppCompatActivity {
     private RecyclerView postinsta;
     private DatabaseReference mdatabase;
     private FirebaseAuth mauth;
     private FirebaseAuth.AuthStateListener authStateListener;
     ProgressBar progressBar1;
-        Button add;
+    Button add;
     ArrayAdapter<CharSequence> adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_east);
+        setContentView(R.layout.activity_geyzing);
         mauth = FirebaseAuth.getInstance();
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -51,8 +45,8 @@ public class East extends AppCompatActivity {
                     add.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent i = new Intent(East.this, Admin.class);
-                            i.putExtra("keyroot","EastHomestays");
+                            Intent i = new Intent(Geyzing.this, Admin.class);
+                            i.putExtra("keyroot","Geyzing");
                             startActivity(i);
                         }
                     });
@@ -63,8 +57,7 @@ public class East extends AppCompatActivity {
         progressBar1.setVisibility(View.VISIBLE);
 
         add = findViewById(R.id.addmore);
-
-        mdatabase = FirebaseDatabase.getInstance().getReference().child("EastHomestays");
+        mdatabase = FirebaseDatabase.getInstance().getReference().child("Geyzing");
         postinsta = findViewById(R.id.postinsta);
         postinsta.setHasFixedSize(true);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
@@ -75,25 +68,25 @@ public class East extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         mauth.addAuthStateListener(authStateListener);
-        FirebaseRecyclerAdapter<gtr, BlogViewholder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<gtr, BlogViewholder>(gtr.class,R.layout.design2,BlogViewholder.class,mdatabase) {
+        FirebaseRecyclerAdapter<gtr, East.BlogViewholder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<gtr, East.BlogViewholder>(gtr.class,R.layout.design2,East.BlogViewholder.class,mdatabase) {
             @Override
-            protected void populateViewHolder(BlogViewholder viewHolder, gtr model, int position) {
+            protected void populateViewHolder(East.BlogViewholder viewHolder, gtr model, int position) {
                 final String pskey = getRef(position).getKey();
                 viewHolder.setName(model.getName());
-               viewHolder.setHomestayPic(getApplicationContext(), model.getHomestayPic());
-               viewHolder.setHomeaddress(model.getHomeaddress());
+                viewHolder.setHomestayPic(getApplicationContext(), model.getHomestayPic());
+                viewHolder.setHomeaddress(model.getHomeaddress());
                 viewHolder.setPrice(model.getPrice());
                 progressBar1.setVisibility(View.GONE);
                 viewHolder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(East.this, "Loading details...", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Geyzing.this, "Loading details...", Toast.LENGTH_LONG).show();
                         mdatabase.child(pskey).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
-                                Intent intent = new Intent(East.this, Main2Activity.class);
+                                Intent intent = new Intent(Geyzing.this, Main2Activity.class);
                                 intent.putExtra("message", pskey);
-                                intent.putExtra("keyroot","EastHomestays");
+                                intent.putExtra("keyroot","Geyzing");
                                 startActivity(intent);
                             }
 
@@ -111,11 +104,11 @@ public class East extends AppCompatActivity {
     }
 
     public static class BlogViewholder extends RecyclerView.ViewHolder {
-    View view;
-    public BlogViewholder(View itemview)
+        View view;
+        public BlogViewholder(View itemview)
         {
-        super(itemview);
-        view=itemview;
+            super(itemview);
+            view=itemview;
 
         }
         public void setName(String nname)
@@ -123,10 +116,10 @@ public class East extends AppCompatActivity {
             TextView ptitle=view.findViewById(R.id.hotelname);
             ptitle.setText(nname);
         }
-   public void setHomeaddress(String Hommeaddress) {
-       TextView det = view.findViewById(R.id.hoteladdress);
-       det.setText(Hommeaddress);
-   }
+        public void setHomeaddress(String Hommeaddress) {
+            TextView det = view.findViewById(R.id.hoteladdress);
+            det.setText(Hommeaddress);
+        }
         public void setHomestayPic(Context ctx, String image) {
             ImageView post=view.findViewById(R.id.hotelpic);
             Picasso.with(ctx).load(image).into(post);

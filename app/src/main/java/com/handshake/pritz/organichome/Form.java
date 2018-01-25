@@ -1,31 +1,27 @@
 package com.handshake.pritz.organichome;
 import android.app.DatePickerDialog;
 
-import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
- import android.view.View;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import android.app.Dialog;
+
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -34,27 +30,41 @@ import static com.handshake.pritz.organichome.Form.DatePickerDialogFragment.getD
 
 public class Form extends AppCompatActivity implements View.OnClickListener {
     private static Calendar calendar,calendar2;
-   static TextView p, q,pop,pol;
+   static TextView p, q,pop,pol,formname,formemail,formpeople,formphone;
    public static int jk,g;
   static int psprice,bigprice;
+  EditText ffname,eemail,nnumv;
+      String price,Aaname,AAdress,Apic;
    Button pay;
-     Spinner spinner;
+     Spinner spinner,spinner2;
     public static String a;
     private DatePickerDialogFragment mDatePickerDialogFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final Bundle bundle = getIntent().getExtras();
+        if(getIntent().getExtras()!=null) {
+              price = bundle.getString("price");
+            Aaname = bundle.getString("aname");
+            AAdress= bundle.getString("aadress");
+            Apic = bundle.getString("aimage");
+
+        }
         setContentView(R.layout.activity_form);
         spinner = findViewById(R.id.spinner);
+         p = findViewById(R.id.to);
 
 
-        p = findViewById(R.id.to);
         pol = findViewById(R.id.pol);
         pop = findViewById(R.id.ppric);
         pay=findViewById(R.id.Pay);
-        Bundle bundle = getIntent().getExtras();
-        final String price = bundle.getString("price");
+        formname=findViewById(R.id.formname);
+        formemail=findViewById(R.id.formemail);
+        formphone=findViewById(R.id.formphone);
+        formpeople=findViewById(R.id.formpeople);
+
+
         try {
               psprice= Integer.parseInt(price);
         } catch(NumberFormatException nfe) {
@@ -63,14 +73,72 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
         pop.setText(price);
 
         pay.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
+         @Override
+         public void onClick(View view) {
+        try {
+           /* g = getDaysDifference(calendar, calendar2);
+             a = String.valueOf(g);
+            pol.setText(a + "\tNight");
+            bigprice=psprice*jk*g ;
+            pop.setText(String.valueOf(bigprice));*/
+            if (calendar==null)
+            {
+                Toast.makeText(Form.this, "Select Check-Out Properly ", Toast.LENGTH_LONG).show();
 
-        g= getDaysDifference(calendar, calendar2);
-        a= String.valueOf(g);
-        pol.setText(a+"\tNights");
+            }
+            if (calendar2==null)
+            {
+                Toast.makeText(Form.this, "Select Check-In Properly ", Toast.LENGTH_LONG).show();
+            }
+            if(a==null)
+            {
+                Toast.makeText(Form.this, "Select Dates Properly ", Toast.LENGTH_LONG).show();
 
-        pop.setText(String.valueOf(bigprice));
+            }
+            if(String.valueOf(bigprice)==null)
+            {
+                Toast.makeText(Form.this, "Select Dates Properly ", Toast.LENGTH_LONG).show();
+
+            }
+
+            if (formname.getText().toString().trim().equalsIgnoreCase("")) {
+                formname.setError("Full Name cannot be Empty");
+            }
+
+            if (formemail.getText().toString().trim().equalsIgnoreCase("")) {
+                formemail.setError("This field can not be blank");
+            }
+
+            if (formphone.getText().toString().trim().equalsIgnoreCase("")) {
+                formphone.setError("This field can not be blank");
+            }
+
+            if (formpeople.getText().toString().trim().equalsIgnoreCase("")) {
+                formpeople.setError("This field can not be blank");
+            }
+            final String fullname = formname.getText().toString();
+            final String fullemail = formemail.getText().toString();
+            final String fullpeople = formpeople.getText().toString();
+            final String fullphone = formphone.getText().toString();
+            if(bigprice>=psprice && calendar!=null & calendar2!=null &&!TextUtils.isEmpty(fullname) &&!TextUtils.isEmpty(fullemail)&&!TextUtils.isEmpty(fullpeople) &&!TextUtils.isEmpty(fullphone) ){
+            Intent intent = new Intent(Form.this, Formfilling.class);
+            intent.putExtra("Price",String.valueOf(bigprice));
+            intent.putExtra("fullname",fullname);
+                intent.putExtra("fullemail",fullemail);
+                intent.putExtra("fullpeople",fullpeople);
+                intent.putExtra("fullphone",fullphone);
+                intent.putExtra("Aaname",Aaname);
+                SimpleDateFormat getdate = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+                intent.putExtra("cin",getdate.format(calendar.getTime()));
+                intent.putExtra("cout",getdate.format(calendar2.getTime()));
+                intent.putExtra("Aadress",AAdress);
+                intent.putExtra("Apic",Apic);
+                intent.putExtra("fullroom",String.valueOf(jk));
+                startActivity(intent);
+            }
+
+        }catch (Exception e)
+        {}
     }
 });
         q = findViewById(R.id.from);
@@ -89,9 +157,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
                 }
                 pop.setText(String.valueOf(bigprice));
 
-                // Showing selected spinner item
-                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-                //tag = spinner.getSelectedItem().toString();
+                 Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
 
 
             }
@@ -164,28 +230,37 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
 
 
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                try {
+
+                    SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+                    if (flag == FLAG_START_DATE) {
+                        calendar = Calendar.getInstance();
+                        calendar.set(year, monthOfYear, dayOfMonth);
+                        p.setText(format.format(calendar.getTime()));
 
 
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd",Locale.US);
-            if (flag == FLAG_START_DATE) {
-                calendar = Calendar.getInstance();
-                calendar.set(year, monthOfYear, dayOfMonth);
-                p.setText(format.format(calendar.getTime()));
+                    } else if (flag == FLAG_END_DATE) {
+                        calendar2 = Calendar.getInstance();
+                        calendar2.set(year, monthOfYear, dayOfMonth);
+                        q.setText(format.format(calendar2.getTime()));
+                    }
+                }
+                catch (Exception e)
+                {
+                }
+          try {
+              g = getDaysDifference(calendar, calendar2);
+              if(g==0)
+                  g=1;
+              a = String.valueOf(g);
+              pol.setText(a + "\tNights");
+              bigprice = psprice * jk * g;
+              pop.setText(String.valueOf(bigprice));
+          }
+          catch (Exception e)
+          {
 
-
-
-            } else if (flag == FLAG_END_DATE) {
-                calendar2 = Calendar.getInstance();
-                calendar2.set(year, monthOfYear, dayOfMonth);
-                q.setText(format.format(calendar2.getTime()));
-            }
-
-            g= getDaysDifference(calendar, calendar2);
-            a= String.valueOf(g);
-            pol.setText(a+"\tNights");
-             bigprice=psprice*jk*g ;
-            pop.setText(String.valueOf(bigprice));
-
+          }
         }
 
         public static int getDaysDifference(Calendar calendar1,Calendar calendar2)
@@ -199,6 +274,9 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
             else {
                 diff = calendar2.getTimeInMillis() - calendar1.getTimeInMillis();
                 float dayCount = (float) diff / (24 * 60 * 60 * 1000);
+                if(dayCount==0)
+                    return 1;
+                else
                 return ((int) dayCount);
             }
         }
