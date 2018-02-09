@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "381308119767-l29aq4up6rnvk8avt1ms184ucpfdvvde.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.handshake.pritz.organichome",
+            "certificate_hash": "a3134c05bc5c82f649bbfa94d7147dce630a2f0b"
+          }
+        },
+        {
           "client_id": "381308119767-6sokt4khms5omjnu73h333jpf8ngr62a.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

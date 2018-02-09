@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:orientation="vertical">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dip"
+            android:text="New Price"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/new_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btnbac"
+            android:gravity="center"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textColor="@android:color/white"></EditText>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/cncl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#fa0303"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:text="Cancel"
+            android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/gh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#19ae05"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:text="Update"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+    </LinearLayout>
+

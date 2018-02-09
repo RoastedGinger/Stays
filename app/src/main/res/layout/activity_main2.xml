@@ -327,26 +327,14 @@
         android:id="@+id/update"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFF70202"
+        android:background="#25a908"
         android:layout_margin="10dp"
         android:visibility="gone"
         android:text="Update"
         android:textColor="@android:color/white" />
 
 
-    <TextView
-        android:id="@+id/person"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:gravity="center"
-        android:paddingBottom="@dimen/songs_count_padding_bottom"
-        android:paddingRight="@dimen/album_title_padding"
-        android:text="This homestay is servised under the trade name of Pritam Shah as per the quality standards of Organic Homestays"
-        android:textColor="@android:color/black"
-        android:textStyle="bold" />
-
-    </LinearLayout>
+</LinearLayout>
 </ScrollView>
 
  </LinearLayout>

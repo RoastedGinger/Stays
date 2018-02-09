@@ -75,7 +75,7 @@
                     android:ems="10"
                     android:gravity="center"
                     android:hint="@string/address_of_homestay"
-                    android:inputType="textMultiLine"
+                    android:inputType="textPersonName"
                     android:paddingBottom="15dp"
                     android:paddingEnd="15dp"
                     android:paddingLeft="15dp"
