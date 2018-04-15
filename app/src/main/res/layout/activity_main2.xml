@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
-    android:orientation="vertical"
+     android:orientation="vertical"
     tools:context="com.handshake.pritz.organichome.Main2Activity">
 
     <ProgressBar
@@ -277,7 +276,7 @@
                 android:id="@+id/amountcb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#0c5e03"
+                android:background="#f71253"
                 android:gravity="left"
                 android:padding="5dp"
                 android:text="Please Read"
@@ -311,7 +310,7 @@
         android:id="@+id/book"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bookbtn"
+        android:background="@drawable/btnbac"
         android:text="Book"
         android:textColor="@android:color/white" />
     <Button
@@ -327,7 +326,7 @@
         android:id="@+id/update"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#25a908"
+        android:background="#f98204"
         android:layout_margin="10dp"
         android:visibility="gone"
         android:text="Update"

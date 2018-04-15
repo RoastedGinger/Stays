@@ -75,38 +75,7 @@ public class Admin extends AppCompatActivity {
             }
         });
 
-        // Spinner click listener
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String item = adapterView.getItemAtPosition(i).toString();
-
-                // Showing selected spinner item
-                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-                tag = spinner.getSelectedItem().toString();
-
-            }
-
-
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-        // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("Good");
-        categories.add("Very Good");
-        categories.add("Excellent");
-
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        spinner.setAdapter(dataAdapter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

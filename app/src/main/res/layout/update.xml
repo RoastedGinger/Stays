@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
-    android:orientation="vertical">
+     android:orientation="vertical">
 
     <EditText
         android:id="@+id/new_usrname"
@@ -13,7 +12,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/btnbac"
+        android:background="@drawable/newedit"
         android:gravity="center"
         android:hint="username"
         android:padding="8dp"
@@ -30,7 +29,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/btnbac"
+        android:background="@drawable/newedit"
         android:gravity="center"
         android:hint="password"
         android:inputType="textPassword"
