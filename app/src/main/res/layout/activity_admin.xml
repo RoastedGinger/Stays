@@ -118,7 +118,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/btnbac"
                     android:text="@string/upload"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </LinearLayout>
 
 </ScrollView>

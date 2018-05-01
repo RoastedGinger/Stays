@@ -149,7 +149,7 @@ Button log;
         LayoutInflater linf=LayoutInflater.from(MainActivity.this);
         View inflator=linf.inflate(R.layout.update,null);
         builder=new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Admin Login...");
+        builder.setTitle("Hey, Admin Login to Gain Access...");
         builder.setView(inflator);
         new_usrname=inflator.findViewById(R.id.new_usrname);
         new_pass=inflator.findViewById(R.id.new_pass);

@@ -47,9 +47,10 @@
                         android:layout_gravity="center"
                         android:layout_margin="20dp"
                         android:background="@drawable/btnbac"
+                        android:fontFamily="cursive"
                         android:padding="20dp"
                         android:text="Gangtok"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/black" />
 
                     <Button
                         android:id="@+id/c"
@@ -58,10 +59,11 @@
                         android:layout_gravity="center"
                         android:layout_margin="20dp"
                         android:background="@drawable/btnbac"
-                        android:padding="20dp"
+                        android:fontFamily="cursive"
 
+                        android:padding="20dp"
                         android:text="Geyzing"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/black" />
 
                     <Button
                         android:id="@+id/d"
@@ -70,9 +72,10 @@
                         android:layout_gravity="center"
                         android:layout_margin="20dp"
                         android:background="@drawable/btnbac"
+                        android:fontFamily="cursive"
                         android:padding="20dp"
                         android:text="Namchi"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/black" />
 
                     <Button
                         android:id="@+id/e"
@@ -81,9 +84,10 @@
                         android:layout_gravity="center"
                         android:layout_margin="20dp"
                         android:background="@drawable/btnbac"
+                        android:fontFamily="cursive"
                         android:padding="20dp"
                         android:text="Mangan"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/black" />
 
                     <Button
                         android:id="@+id/log"
@@ -94,7 +98,7 @@
                         android:background="@drawable/btnbac"
                         android:padding="20dp"
                         android:text="Login.."
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:visibility="visible" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>

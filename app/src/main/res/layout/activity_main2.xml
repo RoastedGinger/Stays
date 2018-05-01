@@ -56,6 +56,7 @@
                 android:layout_alignParentTop="true"
                 android:adjustViewBounds="true"
                 android:cropToPadding="true"
+                android:foregroundGravity="center"
                 android:scaleType="fitCenter"
                 android:src="@drawable/image_two" />
 
@@ -312,7 +313,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/btnbac"
         android:text="Book"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/black" />
     <Button
         android:id="@+id/del"
         android:layout_width="match_parent"
@@ -330,7 +331,7 @@
         android:layout_margin="10dp"
         android:visibility="gone"
         android:text="Update"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/black" />
 
 
 </LinearLayout>

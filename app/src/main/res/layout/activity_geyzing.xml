@@ -30,11 +30,13 @@
 
     <Button
         android:id="@+id/addmore"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:layout_margin="5dp"
         android:background="@drawable/btnbac"
         android:text="Add More"

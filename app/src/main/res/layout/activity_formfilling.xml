@@ -128,11 +128,12 @@
 
             <Button
                 android:id="@+id/Pay"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/btnbac"
                 android:text="Pay"
-                 android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
