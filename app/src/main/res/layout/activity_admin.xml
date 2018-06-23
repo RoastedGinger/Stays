@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="5dp"
-    tools:context="com.handshake.pritz.organichome.Admin">
+    tools:context="com.handshake.pritz.OrganicHomeStay.Admin">
     <ImageButton
         android:id="@+id/hotelpic"
         android:layout_width="wrap_content"

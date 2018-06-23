@@ -1,4 +1,4 @@
-package com.handshake.pritz.organichome;
+package com.handshake.pritz.OrganicHomeStay;
 
 /**
  * Created by pritz on 20/1/18.

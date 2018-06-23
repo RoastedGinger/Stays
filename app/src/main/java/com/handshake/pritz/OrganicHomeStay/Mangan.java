@@ -1,4 +1,4 @@
-package com.handshake.pritz.organichome;
+package com.handshake.pritz.OrganicHomeStay;
 
 import android.content.Context;
 import android.content.Intent;

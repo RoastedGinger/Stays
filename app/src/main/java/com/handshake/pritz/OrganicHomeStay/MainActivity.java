@@ -1,11 +1,9 @@
-package com.handshake.pritz.organichome;
+package com.handshake.pritz.OrganicHomeStay;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -110,6 +107,12 @@ Button log;
             intent.setData(Uri.parse("tel:"+number));
             startActivity(intent);
         }
+        if(id==R.id.abt) {
+            Intent i = new Intent(MainActivity.this, About.class);
+            startActivity(i);
+        }
+
+
         if (id == R.id.mail) {
 
             String uriText =

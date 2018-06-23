@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.handshake.pritz.organichome.MainActivity">
+    tools:context="com.handshake.pritz.OrganicHomeStay.MainActivity">
 
     <item
         android:id="@+id/con"
@@ -13,11 +13,11 @@
          android:title="Mail Us"
         app:showAsAction="never" />
     <item
-        android:id="@+id/exit"
-         android:title="Exit"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/abt"
          android:title="About"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exit"
+        android:title="Exit"
         app:showAsAction="never" />
 </menu>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.handshake.pritz.organichome.Geyzing">
+    tools:context="com.handshake.pritz.OrganicHomeStay.Geyzing">
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"

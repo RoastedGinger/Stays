@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.handshake.pritz.organichome.Formfilling">
+    tools:context="com.handshake.pritz.OrganicHomeStay.Formfilling">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +33,8 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dip"
-                 android:textColor="@color/colorPrimaryDark"
+                android:text="hello"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
             <TextView
@@ -43,7 +44,8 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dip"
-                 android:textColor="@color/colorPrimaryDark"
+                android:text="asfaasf"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
             <TextView
@@ -73,14 +75,16 @@
                 android:layout_marginTop="10dip"
                  android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/hname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dip"
-                 android:textColor="@color/colorPrimaryDark"
+                android:text="jh"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
             <TextView

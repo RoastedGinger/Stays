@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    android:background="@android:color/white"
+    tools:context="com.handshake.pritz.OrganicHomeStay.About">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideInset"
+        android:scrollbarSize="9dp"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+
+            android:weightSum="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:id="@+id/imageView3"
+                android:src="@drawable/log"
+                tools:ignore="ContentDescription"></ImageView>
+            <TextView
+                android:id="@+id/tfy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About Us:"
+                android:textSize="23dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/VC"
+                android:textColor="@android:color/black"
+                />
+
+            <TextView
+                android:id="@+id/tfy2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Us:"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:id="@+id/tfsvdy2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Services"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tuyf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/services"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:id="@+id/tfsvgddsfdy2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Privacy Policy"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tuygdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy"
+                android:textColor="@android:color/black"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:id="@+id/fsfd"
+                android:src="@drawable/flow"
+                tools:ignore="ContentDescription"></ImageView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

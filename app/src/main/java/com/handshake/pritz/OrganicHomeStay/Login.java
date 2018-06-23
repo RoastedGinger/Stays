@@ -1,4 +1,4 @@
-package com.handshake.pritz.organichome;
+package com.handshake.pritz.OrganicHomeStay;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
 
 public class Login extends AppCompatActivity {
 

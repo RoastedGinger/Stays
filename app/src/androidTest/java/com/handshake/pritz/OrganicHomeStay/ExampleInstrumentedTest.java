@@ -1,4 +1,4 @@
-package com.handshake.pritz.organichome;
+package com.handshake.pritz.OrganicHomeStay;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.handshake.pritz.organichome", appContext.getPackageName());
+        assertEquals("com.handshake.pritz.OrganicHomeStay", appContext.getPackageName());
     }
 }
