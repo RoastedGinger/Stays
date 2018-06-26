@@ -41,9 +41,15 @@ Button log;
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null)
                 {
-                    Toast.makeText(MainActivity.this, "Admin Welcome", Toast.LENGTH_LONG).show();
-                    log.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_SHORT).show();
+
                 }
+                else {
+                    Intent i = new Intent(MainActivity.this, Logi.class);
+                    startActivity(i);
+                    finish();
+                }
+
             }
         };
         mauth.addAuthStateListener(authStateListener);
@@ -51,6 +57,7 @@ Button log;
         Button geyzing=findViewById(R.id.c);
         Button namhci=findViewById(R.id.d);
         Button mangan=findViewById(R.id.e);
+
         log=findViewById(R.id.log);
         log.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +106,10 @@ Button log;
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
+        if(id==R.id.profile) {
+            Intent i = new Intent(MainActivity.this, Profile.class);
+            startActivity(i);
+        }
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.con) {

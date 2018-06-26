@@ -57,8 +57,11 @@ String aname,aaddress,aimage,aprice;
         authStateListener=new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser()!=null)
-                {del.setVisibility(View.VISIBLE);
+
+
+                String ps=firebaseAuth.getCurrentUser().getEmail().toString();
+                if (ps.equals("pritz@gmail.com")) {
+                del.setVisibility(View.VISIBLE);
                 del.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view)

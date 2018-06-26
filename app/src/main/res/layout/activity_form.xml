@@ -172,115 +172,72 @@
                     android:textSize="25sp"
                     android:textStyle="bold" />
             </LinearLayout>
-
-            <TextView
-                android:layout_width="fill_parent"
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:layout_marginTop="10dip"
-                android:text="Full Name"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
+                >
 
             <EditText
                 android:id="@+id/formname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/editbac"
                 android:ems="10"
-                android:gravity="center"
                 android:hint="Full Name"
                 android:inputType="textPersonName"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
                 android:textColor="@color/colorAccent" />
+            </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="10dip"
-        android:text="Phone"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                >
 
             <EditText
                 android:id="@+id/formphone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/editbac"
-                android:ems="10"
-                android:gravity="center"
+                 android:ems="10"
                 android:hint="phone"
                 android:inputType="phone"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
                 android:textColor="@color/colorAccent" />
+            </android.support.design.widget.TextInputLayout>
 
-            <TextView
-                android:layout_width="fill_parent"
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:layout_marginTop="10dip"
-                android:text="Email (Bill will be sent to Email)"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
+                >
 
             <EditText
                 android:id="@+id/formemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/editbac"
                 android:ems="10"
-                android:gravity="center"
-                android:hint="Email"
+                android:hint="Email(bill will be sent to this)"
                 android:inputType="textEmailAddress"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
                 android:textColor="@color/colorAccent" />
+            </android.support.design.widget.TextInputLayout>
 
-            <TextView
-                android:layout_width="fill_parent"
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:layout_marginTop="10dip"
-                android:text="No. of People"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
+                >
             <EditText
                 android:id="@+id/formpeople"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/editbac"
-                android:ems="10"
-                android:gravity="center"
+                 android:ems="10"
                 android:hint="No. of People"
                 android:inputType="phone"
-                android:paddingBottom="15dp"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingStart="15dp"
-                android:paddingTop="15dp"
                 android:singleLine="true"
                 android:textColor="@color/colorAccent" />
-
+            </android.support.design.widget.TextInputLayout>
             <Button
                 android:id="@+id/Pay"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
@@ -288,10 +245,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:background="@drawable/btnbac"
+                android:background="@android:color/holo_red_light"
                 android:onClick="onClick"
                 android:text="Update"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/white" />
 
 
         </LinearLayout>

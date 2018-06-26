@@ -46,7 +46,8 @@ public class East extends AppCompatActivity {
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser() != null) {
+                String ps=firebaseAuth.getCurrentUser().getEmail().toString();
+                if (ps.equals("pritz@gmail.com")) {
                     add.setVisibility(View.VISIBLE);
                     add.setOnClickListener(new View.OnClickListener() {
                         @Override
