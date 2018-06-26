@@ -42,8 +42,8 @@ public class Formfilling extends AppCompatActivity {
     //String uniqueID = UUID.randomUUID().toString();
     //String orderID = "uniqueID"+"randomInt"
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-    https://stackoverflow.com/questions/37093723/how-to-add-an-android-studio-project-to-github    super.onCreate(savedInstanceState);
+    protected void onCreate(Boundle savedInstanceState) {
+   // https://stackoverflow.com/questions/37093723/how-to-add-an-android-studio-project-to-github    super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formfilling);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 //        getWindow().requestFeature(Window.FEATURE_PROGRESS);
