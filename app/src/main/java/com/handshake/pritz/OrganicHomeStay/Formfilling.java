@@ -38,6 +38,7 @@ public class Formfilling extends AppCompatActivity {
     ProgressDialog progressDialog;
     String a, g, b, c, d, e, f, h, i, k, l;
     Button paynow;
+    String polpepl;
 
     //String uniqueID = UUID.randomUUID().toString();
     //String orderID = "uniqueID"+"randomInt"
