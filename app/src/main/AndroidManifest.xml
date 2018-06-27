@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -127,7 +128,8 @@
         <activity android:name=".signup" />
         <activity android:name=".Logi" />
         <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".Success"></activity>
     </application>
 
 </manifest>

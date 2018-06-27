@@ -24,6 +24,15 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
             android:src="@drawable/log" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center|top"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone" />
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,13 +139,6 @@
             android:text="Forgot Password"
             android:textAllCaps="false"
             android:textColor="@color/darker_blue" />
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center|bottom"
-            android:layout_marginBottom="20dp"
-            android:visibility="gone" />
         <!-- Link to Login Screen -->
 
     </LinearLayout>

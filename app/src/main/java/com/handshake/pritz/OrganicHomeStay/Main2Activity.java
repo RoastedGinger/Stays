@@ -139,9 +139,7 @@ String aname,aaddress,aimage,aprice;
             public void onClick(View view) {
                 if(aprice!=null) {
                     Toast.makeText(Main2Activity.this, message, Toast.LENGTH_LONG).show();
-
                     Intent intent = new Intent(Main2Activity.this, Form.class);
-
                     intent.putExtra("kyi", message);
                     intent.putExtra("kyiroot", "EastHomestays");
                     intent.putExtra("aname", aname);

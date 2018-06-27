@@ -1,34 +1,38 @@
 package com.handshake.pritz.OrganicHomeStay;
 import android.app.ProgressDialog;
-//import android.provider.SyncStateContract;
+
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-//import android.view.Window;
+
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.paytm.pgsdk.PaytmMerchant;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+
+import com.android.volley.toolbox.StringRequest;
+
 import com.paytm.pgsdk.PaytmOrder;
 import com.paytm.pgsdk.PaytmPGService;
 import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
-//import com.squareup.picasso.Picasso;
+
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/*import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;*/
 
 public class Formfilling extends AppCompatActivity {
     TextView hid, hadr, hpr, hin, hout, noofpeople, noofroom, hemail, hphone, hname;
@@ -36,38 +40,34 @@ public class Formfilling extends AppCompatActivity {
     private int randomInt = 0;
     private PaytmPGService Service = null;
     ProgressDialog progressDialog;
-    String a, g, b, c, d, e, f, h, i, k, l;
+    String a, g, b, c, d, e, f, h, i, k, l,U_ID="123",checksum;
+    public static final String MID = "Organi97915915986368";
+    public static final String INDUSTRY_TYPE_ID = "Retail109";
+    public static final String CHANNEL_ID = "WAP";
+    public static final String WEBSITE= "APPPROD";
+    public static final String CALLBACK_URL = "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=ORD067878";
     Button paynow;
-    String polpepl;
-
-    //String uniqueID = UUID.randomUUID().toString();
-    //String orderID = "uniqueID"+"randomInt"
+    String orderID;
     @Override
-    protected void onCreate(Boundle savedInstanceState) {
-   // https://stackoverflow.com/questions/37093723/how-to-add-an-android-studio-project-to-github    super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formfilling);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-//        getWindow().requestFeature(Window.FEATURE_PROGRESS);
-       /* final Bundle bundle = getIntent().getExtras();
+        final Bundle bundle = getIntent().getExtras();
         if (getIntent().getExtras() != null) {
             a = bundle.getString("Price");
-            //  a ="Total Amount:\t"+bundle.getString("Price")+"/-";
-            b = "Name:\t" + bundle.getString("fullname");
-            c = "Email:" + bundle.getString("fullemail");
-            d = "No. of People:\t" + bundle.getString("fullpeople");
-            e = "Mobile:\t" + bundle.getString("fullphone");
-            f = "HomeStayName:\t" + bundle.getString("Aaname");
-            g = "HomeStayAddress:\t" + bundle.getString("Aadress");
+            b = bundle.getString("fullname");
+            c = bundle.getString("fullemail");
+            d = bundle.getString("fullpeople");
+            e = bundle.getString("fullphone");
+            f = bundle.getString("Aaname");
+            g = bundle.getString("Aadress");
             h = bundle.getString("Apic");
-            i = "No. of Room:\t" + bundle.getString("fullroom");
-            k = "Check-In:\t" + bundle.getString("cin");
-            l = "Check-Out:\t" + bundle.getString("cout");
-        }*/
-
-        Random randomGenerator = new Random();
-        randomInt = randomGenerator.nextInt(1000000000);
+            i = bundle.getString("fullroom");
+            k = bundle.getString("cin");
+            l = bundle.getString("cout");
+        }
         progressDialog = new ProgressDialog(this);
-       /* Apic = findViewById(R.id.Apic);
         hid = findViewById(R.id.hid);
         hadr = findViewById(R.id.hadr);
         hpr = findViewById(R.id.hpr);
@@ -77,60 +77,98 @@ public class Formfilling extends AppCompatActivity {
         hphone = findViewById(R.id.hphone);
         hemail = findViewById(R.id.hemail);
         noofpeople = findViewById(R.id.noofpeople);
-        noofroom = findViewById(R.id.noofroom);*/
+        noofroom = findViewById(R.id.noofroom);
         paynow = findViewById(R.id.Pay);
 
         paynow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onStartTransaction(view);
+                progressDialog.setMessage("Breathe in Breathe out!");
+                progressDialog.setCancelable(false);
+                Random randomGenerator = new Random();
+                randomInt = randomGenerator.nextInt(1000000000);
+                orderID= String.valueOf(randomInt);
+                Generatechecksum();
             }
         });
     }
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
-    @Override
-    protected void onStart() {
-        super.onStart();
-        //initOrderId();
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    public void Generatechecksum() {
+        String url = "https://beholden-effects.000webhostapp.com/organichome1/checksum.php";
+            StringRequest request = new StringRequest(Request.Method.POST,url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            checksum = response;
+                            Toast.makeText(Formfilling.this,response,Toast.LENGTH_LONG).show();
+                            progressDialog.dismiss();
+                            onStartTransaction();
+                         }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    String voll = error.toString();
+                    Toast.makeText(Formfilling.this,voll,Toast.LENGTH_LONG).show();
+
+                }
+            }){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> paramMap = new HashMap<>();
+                    paramMap.put("CALLBACK_URL", "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID="+orderID);
+                    paramMap.put("CHANNEL_ID", CHANNEL_ID);
+                    paramMap.put("CUST_ID", e);
+                    paramMap.put("INDUSTRY_TYPE_ID", INDUSTRY_TYPE_ID);
+                    paramMap.put("MID", MID);
+                    paramMap.put("ORDER_ID", orderID);
+                    paramMap.put("TXN_AMOUNT", a);
+                    paramMap.put("WEBSITE", WEBSITE);
+                    paramMap.put("EMAIL", c);
+                    paramMap.put("MOBILE_NO", e);
+                    return paramMap;
+                }
+            };
+            MySingleton.getInstance(Formfilling.this).addToRequestQue(request);
+
     }
 
-    public void onStartTransaction (View view){
+    protected void onStart() {
+        super.onStart();
+       hid.setText("Homestay Name:\t"+f);
+       hadr.setText("Homestay Address:\t"+g);
+        hpr.setText("Homestay Price:\t"+a);
+        hin.setText("Check In:\t"+k);
+        hout.setText("Check Out:\t"+l);
+        hname.setText("Name:\t"+b);
+        hphone.setText("Phone:\t"+e);
+        hemail.setText("Email:\t"+c);
+        noofpeople.setText("No of People:\t"+d);
+        noofroom.setText("Homestay Name:\t"+i);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    }
+    public void onStartTransaction (){
+        String url = "https://beholden-effects.000webhostapp.com/organichome1/checksum.php";
         PaytmPGService Service = PaytmPGService.getProductionService();
         HashMap<String, String> paramMap = new HashMap<String, String>();
-
-        // these are mandatory parameters
-
-        paramMap.put("CALLBACK_URL", "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=ORD09936");
-        paramMap.put("CHANNEL_ID", "WAP");
-        paramMap.put("CHECKSUMHASH", "R40zrTkkVAAba3in0moK4Io+vBxw86huWfVCY01zwTvTovllSppJzYYk1PgBICu76TP8O1iSC9RHvQbMMiOZM8gYNaqS2hEnIMGyD3iHnoI=");
-        paramMap.put("CUST_ID", "CUST12345");
-        paramMap.put("INDUSTRY_TYPE_ID", "Retail109");
-        paramMap.put("MID", "Organi97915915986368");
-        paramMap.put("ORDER_ID", "ORD09936");
-        paramMap.put("TXN_AMOUNT", "1");
-        paramMap.put("WEBSITE", "APPPROD");
-        paramMap.put("EMAIL", "ajpcvs@gmail.com");
-        paramMap.put("MOBILE_NO", "9462838364");
-
-
+        paramMap.put("CALLBACK_URL", "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID="+orderID);
+        paramMap.put("CHANNEL_ID",CHANNEL_ID);
+        paramMap.put("CHECKSUMHASH", checksum);
+        paramMap.put("CUST_ID",e);
+        paramMap.put("INDUSTRY_TYPE_ID",INDUSTRY_TYPE_ID);
+        paramMap.put("MID",MID);
+        paramMap.put("ORDER_ID",orderID);
+        paramMap.put("TXN_AMOUNT",a);
+        paramMap.put("WEBSITE",WEBSITE);
+        paramMap.put("EMAIL",c);
+        paramMap.put("MOBILE_NO",e);
+        JSONObject jsonObject = new JSONObject(paramMap);
         PaytmOrder Order = new PaytmOrder(paramMap);
-
-        /*PaytmMerchant Merchant = new PaytmMerchant(
-                "https://beholden-effects.000webhostapp.com/organichome/generateChecksum.php",
-                "https://beholden-effects.000webhostapp.com/organichome/verifyChecksum.php");*/
-
         Service.initialize(Order, null);
 
         Service.startPaymentTransaction(this, true, true,
                 new PaytmPaymentTransactionCallback() {
                     @Override
                     public void someUIErrorOccurred(String inErrorMessage) {
-                        // Some UI Error Occurred in Payment Gateway Activity.
-                        // // This may be due to initialization of views in
-                        // Payment Gateway Activity or may be due to //
-                        // initialization of webview. // Error Message details
-                        // the error occurred.
                     }
 
 					/*@Override
@@ -157,29 +195,30 @@ public class Formfilling extends AppCompatActivity {
                     @Override
                     public void onTransactionResponse(Bundle inResponse) {
                         Log.d("LOG", "Payment Transaction is successful " + inResponse);
-                        Toast.makeText(getApplicationContext(), "Payment Transaction response " + inResponse.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Payment Transaction is Successful" + inResponse.toString(), Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(Formfilling.this,Success.class);
+                       i.putExtra("Response",inResponse.toString());
+                        startActivity(i);
+
                     }
 
                     @Override
-                    public void networkNotAvailable() { // If network is not
-                        // available, then this
-                        // method gets called.
+                    public void networkNotAvailable() {
+                        Toast.makeText(getApplicationContext(), "Check Your Internet Connection!", Toast.LENGTH_LONG).show();
+
+
                     }
 
                     @Override
                     public void clientAuthenticationFailed(String inErrorMessage) {
-                        // This method gets called if client authentication
-                        // failed. // Failure may be due to following reasons //
-                        // 1. Server error or downtime. // 2. Server unable to
-                        // generate checksum or checksum response is not in
-                        // proper format. // 3. Server failed to authenticate
-                        // that client. That is value of payt_STATUS is 2. //
-                        // Error Message describes the reason for failure.
+                        Toast.makeText(getApplicationContext(), "Authentication Failure", Toast.LENGTH_LONG).show();
+
                     }
 
                     @Override
                     public void onErrorLoadingWebPage(int iniErrorCode,
                                                       String inErrorMessage, String inFailingUrl) {
+                        Toast.makeText(getApplicationContext(), "Error Loading Payment Page", Toast.LENGTH_LONG).show();
 
                     }
 

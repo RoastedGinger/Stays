@@ -22,7 +22,6 @@
         android:layout_gravity="center"
         android:text="Loading Image..."
         android:textColor="@android:color/white"
-        android:textSize="20sp"
         android:textStyle="bold" />
 
     <ScrollView
@@ -115,7 +114,7 @@
                 android:gravity="left"
                 android:paddingBottom="@dimen/songs_count_padding_bottom"
                 android:paddingRight="@dimen/album_title_padding"
-                android:text="AmountPayable "
+                android:text="Amount Payable "
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
             <TextView

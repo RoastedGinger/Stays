@@ -114,12 +114,16 @@
 
                 <Button
                     android:id="@+id/send"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/btnbac"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:background="@color/red"
                     android:layout_gravity="center"
                     android:text="@string/upload"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/white" />
+
+
             </LinearLayout>
 
 </ScrollView>
