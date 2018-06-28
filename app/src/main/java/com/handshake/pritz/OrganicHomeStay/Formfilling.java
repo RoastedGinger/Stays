@@ -79,11 +79,13 @@ public class Formfilling extends AppCompatActivity {
         noofpeople = findViewById(R.id.noofpeople);
         noofroom = findViewById(R.id.noofroom);
         paynow = findViewById(R.id.Pay);
+        progressDialog = new ProgressDialog(this);
 
         paynow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressDialog.setMessage("Breathe in Breathe out!");
+                progressDialog.show();
                 progressDialog.setCancelable(false);
                 Random randomGenerator = new Random();
                 randomInt = randomGenerator.nextInt(1000000000);
@@ -109,6 +111,7 @@ public class Formfilling extends AppCompatActivity {
                 public void onErrorResponse(VolleyError error) {
                     String voll = error.toString();
                     Toast.makeText(Formfilling.this,voll,Toast.LENGTH_LONG).show();
+                    progressDialog.dismiss();
 
                 }
             }){
@@ -143,7 +146,7 @@ public class Formfilling extends AppCompatActivity {
         hphone.setText("Phone:\t"+e);
         hemail.setText("Email:\t"+c);
         noofpeople.setText("No of People:\t"+d);
-        noofroom.setText("Homestay Name:\t"+i);
+        noofroom.setText("No.of Room:\t"+i);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
     public void onStartTransaction (){
@@ -195,10 +198,49 @@ public class Formfilling extends AppCompatActivity {
                     @Override
                     public void onTransactionResponse(Bundle inResponse) {
                         Log.d("LOG", "Payment Transaction is successful " + inResponse);
-                        Toast.makeText(getApplicationContext(), "Payment Transaction is Successful" + inResponse.toString(), Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(Formfilling.this,Success.class);
-                       i.putExtra("Response",inResponse.toString());
-                        startActivity(i);
+
+                            String p=inResponse.getString("STATUS");
+                            if(p.equals("TXN_SUCCESS"))
+                            {  Toast.makeText(getApplicationContext(), "Payment Transaction is Successful" + inResponse.toString(), Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(Formfilling.this,Success.class);
+                                i.putExtra("a","Name:"+b);
+                                i.putExtra("b","Address:\t"+g);
+                                i.putExtra("c","Homestay Price:\t"+a);
+                                i.putExtra("d","Check In:\t"+k);
+                                i.putExtra("e","Check Out:\t"+l);
+                                i.putExtra("f","Home Stay Name:\t"+f);
+                                i.putExtra("g","Phone:\t"+e);
+                                i.putExtra("h","Email:\t"+c);
+                                i.putExtra("i","No of People:\t"+d);
+                                i.putExtra("j","No.of Room:\t"+i);
+                                i.putExtra("k",orderID);
+                                i.putExtra("l",b);
+                                i.putExtra("m",inResponse.toString());
+                                startActivity(i);
+
+                            }
+                            else
+                            { Toast.makeText(getApplicationContext(), "Payment Transaction is Successful" + inResponse.toString(), Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(Formfilling.this,Success.class);
+                                i.putExtra("a","Homestay Name:"+b);
+                                i.putExtra("b","Address:\t"+g);
+                                i.putExtra("c","Homestay Price:\t"+a);
+                                i.putExtra("d","Check In:\t"+k);
+                                i.putExtra("e","Check Out:\t"+l);
+                                i.putExtra("f","Name:\t"+b);
+                                i.putExtra("g","Phone:\t"+e);
+                                i.putExtra("h","Email:\t"+c);
+                                i.putExtra("i","No of People:\t"+d);
+                                i.putExtra("j","No.of Room:\t"+i);
+                                i.putExtra("k",orderID);
+                                i.putExtra("l",b);
+                                i.putExtra("m",inResponse.toString());
+                                startActivity(i);
+                                Toast.makeText(getApplicationContext(), "Payment Failure" + inResponse.toString(), Toast.LENGTH_LONG).show();
+                            }
+
+
+
 
                     }
 
