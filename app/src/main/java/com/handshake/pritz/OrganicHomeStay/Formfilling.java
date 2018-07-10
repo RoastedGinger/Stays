@@ -40,7 +40,7 @@ public class Formfilling extends AppCompatActivity {
     private int randomInt = 0;
     private PaytmPGService Service = null;
     ProgressDialog progressDialog;
-    String a, g, b, c, d, e, f, h, i, k, l,U_ID="123",checksum;
+    String a, g, b, c, d, e, f, h, we, k, l,U_ID="123",checksum;
     public static final String MID = "Organi97915915986368";
     public static final String INDUSTRY_TYPE_ID = "Retail109";
     public static final String CHANNEL_ID = "WAP";
@@ -63,7 +63,7 @@ public class Formfilling extends AppCompatActivity {
             f = bundle.getString("Aaname");
             g = bundle.getString("Aadress");
             h = bundle.getString("Apic");
-            i = bundle.getString("fullroom");
+            we = bundle.getString("fullroom");
             k = bundle.getString("cin");
             l = bundle.getString("cout");
         }
@@ -146,7 +146,7 @@ public class Formfilling extends AppCompatActivity {
         hphone.setText("Phone:\t"+e);
         hemail.setText("Email:\t"+c);
         noofpeople.setText("No of People:\t"+d);
-        noofroom.setText("No.of Room:\t"+i);
+        noofroom.setText("No.of Room:\t"+we);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
     public void onStartTransaction (){
@@ -212,31 +212,15 @@ public class Formfilling extends AppCompatActivity {
                                 i.putExtra("g","Phone:\t"+e);
                                 i.putExtra("h","Email:\t"+c);
                                 i.putExtra("i","No of People:\t"+d);
-                                i.putExtra("j","No.of Room:\t"+i);
-                                i.putExtra("k",orderID);
-                                i.putExtra("l",b);
-                                i.putExtra("m",inResponse.toString());
+                                i.putExtra("j","No.of Room:\t"+we);
+                                i.putExtra("k","Order ID:\t"+orderID);
+                                i.putExtra("l","Customer ID:\t"+b);
+                                i.putExtra("m","Response from Paytm:"+inResponse.toString());
                                 startActivity(i);
 
                             }
                             else
-                            { Toast.makeText(getApplicationContext(), "Payment Transaction is Successful" + inResponse.toString(), Toast.LENGTH_LONG).show();
-                                Intent i = new Intent(Formfilling.this,Success.class);
-                                i.putExtra("a","Homestay Name:"+b);
-                                i.putExtra("b","Address:\t"+g);
-                                i.putExtra("c","Homestay Price:\t"+a);
-                                i.putExtra("d","Check In:\t"+k);
-                                i.putExtra("e","Check Out:\t"+l);
-                                i.putExtra("f","Name:\t"+b);
-                                i.putExtra("g","Phone:\t"+e);
-                                i.putExtra("h","Email:\t"+c);
-                                i.putExtra("i","No of People:\t"+d);
-                                i.putExtra("j","No.of Room:\t"+i);
-                                i.putExtra("k",orderID);
-                                i.putExtra("l",b);
-                                i.putExtra("m",inResponse.toString());
-                                startActivity(i);
-                                Toast.makeText(getApplicationContext(), "Payment Failure" + inResponse.toString(), Toast.LENGTH_LONG).show();
+                            { Toast.makeText(getApplicationContext(), "Payment Transaction is Unsussessful" + inResponse.toString(), Toast.LENGTH_LONG).show();
                             }
 
 
@@ -247,8 +231,6 @@ public class Formfilling extends AppCompatActivity {
                     @Override
                     public void networkNotAvailable() {
                         Toast.makeText(getApplicationContext(), "Check Your Internet Connection!", Toast.LENGTH_LONG).show();
-
-
                     }
 
                     @Override

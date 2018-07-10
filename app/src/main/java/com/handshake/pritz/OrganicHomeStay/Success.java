@@ -22,7 +22,7 @@ import java.io.FileOutputStream;
 import java.util.Date;
 
 public class Success extends AppCompatActivity {
-    TextView a,b,c,d,e,f,g,h,i,j,k,l,m;
+    TextView a,b,c,d,e,f,g,h,i,j,k,l;
 String aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm;
     String url = "https://beholden-effects.000webhostapp.com/Registration_form/add_info1.php";
     @Override
@@ -56,9 +56,7 @@ String aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm;
         i = findViewById(R.id.i);
         j = findViewById(R.id.j);
         k = findViewById(R.id.k);
-        l = findViewById(R.id.l);
-        m = findViewById(R.id.m);
-    }
+        l = findViewById(R.id.l);      }
     protected void onStart() {
         super.onStart();
         a.setText(aa);
@@ -73,13 +71,13 @@ String aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm;
         j.setText(jj);
         k.setText(kk);
         l.setText(ll);
-        m.setText(mm);
+        //m.setText(mm);
         send();
 
         Thread t =new Thread(){
             public void run(){
                 try{
-                    sleep(1500);
+                    sleep(8000);
                     send();
                 }catch(InterruptedException e){
                     e.printStackTrace();
@@ -119,8 +117,20 @@ String aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm;
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> paramMap = new HashMap<>();
                 paramMap.put("request","1" );
-                paramMap.put("Data",aa+"\n"+bb+"\n"+cc+"\n"+dd+"\n"+ee+"\n"+ff+"\n"+gg+"\n"+hh+"\n"+ii+"\n"+jj+"\n"+kk+"\n"+ll+"\n"+mm);
-                return paramMap;
+               paramMap.put("a",aa);
+               paramMap.put("b",bb);
+                paramMap.put("c",cc);
+                paramMap.put("d",dd);
+                paramMap.put("e",ee);
+                paramMap.put("f",ff);
+                paramMap.put("g",gg);
+                paramMap.put("h",hh);
+                paramMap.put("i",ii);
+                paramMap.put("j",jj);
+                paramMap.put("k",kk);
+                paramMap.put("l",ll);
+                paramMap.put("m",mm);
+                              return paramMap;
             }
         };
         MySingleton.getInstance(Success.this).addToRequestQue(request);
