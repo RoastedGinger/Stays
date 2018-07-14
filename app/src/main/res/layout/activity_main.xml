@@ -4,46 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@android:color/white"
      tools:context="com.handshake.pritz.OrganicHomeStay.MainActivity"
-    android:padding="23dp"
     android:orientation="vertical">
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="7dp"
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/card_view2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/card_margin"
-                android:elevation="3dp"
-                android:padding="4dp"
-                app:cardBackgroundColor="@color/cardview_light_background"
-                app:cardUseCompatPadding="true"
-                tools:targetApi="lollipop">
+                android:padding="7dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="@dimen/ampm_left_padding"
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="@string/todow"
-                        android:cropToPadding="true"
-                        android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/log" />
+                        android:layout_gravity="center"
+                        android:text="Featured Home Stays"
+                        android:textColor="@android:color/black"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        app:fontFamily="cursive" />
 
-                    <Button
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                         android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/girl"
+                         app:civ_border_color="@android:color/black"
+                        app:civ_border_width="3dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#0d0d0c" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Gangtok"
+                        android:textColor="@android:color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        app:fontFamily="cursive" />
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="left"
+                        android:src="@drawable/gng"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="5dp"
+                        android:text="Namchi"
+                        android:textColor="@android:color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        app:fontFamily="cursive" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="right"
+                        android:src="@drawable/namchi"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="5dp"
+                        android:text="Mangan"
+                        android:textColor="@android:color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        app:fontFamily="cursive" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="left"
+                        android:src="@drawable/norh"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="5dp"
+                        android:text="Geyzing"
+                        android:textColor="@android:color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        app:fontFamily="cursive" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="right"
+                        android:src="@drawable/west"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
                         android:id="@+id/b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -104,7 +200,8 @@
                         android:textColor="@android:color/black"
                         android:visibility="gone" />
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
+
+
     </ScrollView>
+
 </LinearLayout>
