@@ -1,6 +1,12 @@
 package com.handshake.pritz.OrganicHomeStay;
 
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.os.Build;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.content.Intent;
         import android.os.Bundle;
@@ -27,10 +33,11 @@ public class Logi extends AppCompatActivity {
     private ProgressBar progressBar;
     private Button gosignup, gologin, goreset;
     String email,password;
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logi);
+
         inputEmail =   findViewById(R.id.email);
         inputPassword =   findViewById(R.id.password);
         progressBar =   findViewById(R.id.progressBar);

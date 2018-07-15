@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.handshake.pritz.OrganicHomeStay">
+    package="com.handshake.pritz.OrganicHomeStay"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/log"
@@ -24,26 +20,28 @@
         android:roundIcon="@drawable/log"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+       <meta-data
+        tools:replace="android:value"
+        android:name="android.support.VERSION"
+        android:value="26.6.0" />
         <activity
             android:name=".Splash"
             android:label="Organic Home Stays"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Main2Activity"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.MainActivity" >
+
         </activity>
         <activity
             android:name="com.paytm.pgsdk.PaytmPGActivity"
@@ -52,19 +50,14 @@
         <activity
             android:name=".East"
             android:label="Gangtok(East Sikkim)"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.MainActivity" >
+
         </activity>
         <activity
             android:name=".Admin"
             android:label=" Welcome Admin"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.MainActivity">
         </activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
@@ -72,64 +65,47 @@
         <activity
             android:name=".Form"
             android:label="Check-In ~ Check-Out"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.Main2Activity">
         </activity>
         <activity
             android:name=".Formfilling"
             android:label="Booking Confirm"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.Form">
         </activity>
         <activity
             android:name=".Login"
-            android:label="Gangtok(East Sikkim)"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:label="Gangtok(East Sikkim)">
         </activity>
         <activity
             android:name=".Geyzing"
             android:label="Geyzing(West Sikkim)"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.MainActivity">
         </activity>
         <activity
             android:name=".Namchi"
             android:label="Namchi(South Sikkim)"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.MainActivity">
         </activity>
         <activity
             android:name=".Mangan"
             android:label="Mangan(North Sikkim)"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.MainActivity">
         </activity>
         <activity
             android:name=".About"
             android:label="About"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.handshake.pritz.OrganicHomeStay.MainActivity" />
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.MainActivity">
         </activity>
-        <activity android:name=".signup" />
-        <activity android:name=".Logi" />
-        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".signup"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Logi"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".ResetPasswordActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".Profile" />
-        <activity android:name=".Success"></activity>
+        <activity android:name=".Success" />
     </application>
-
 </manifest>

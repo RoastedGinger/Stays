@@ -213,5 +213,9 @@ prevail.</string>
     <string name="secured_by_handshke_sikkim">Secured by handshke Sikkim</string>
     <string name="gangtok">Gangtok</string>
     <string name="todow">TODO</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
     >
 </resources>

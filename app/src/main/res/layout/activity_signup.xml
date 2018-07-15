@@ -12,26 +12,89 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center"
-        android:padding="35dp"
         android:background="@android:color/white"
+        android:gravity="center"
+        android:padding="25dp"
         android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Organic Home Stays"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        android:layout_marginBottom="25sp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="right"
+            android:src="@drawable/west"
+            android:padding="3dp"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="right"
+            android:src="@drawable/gng"
+            android:padding="3dp"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="right"
+            android:padding="3dp"
+            android:src="@drawable/norh"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Find the most Awesome Homestays in the City!"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="25sp"
+            android:textStyle="bold"
+            app:fontFamily="cursive" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|top"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardCornerRadius="10dp">
 
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
-            android:src="@drawable/log" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center|top"
-            android:layout_marginBottom="20dp"
-            android:visibility="gone" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="25dp">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -43,6 +106,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Full Name"
+                android:drawableLeft="@drawable/user"
+                android:gravity="center"
                 android:textColorHint="@color/colorPrimaryDark"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
@@ -62,6 +127,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
+                android:gravity="center"
+                android:drawableLeft="@drawable/cal"
                 android:textColorHint="@color/colorPrimaryDark"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
@@ -72,15 +139,15 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-
-            >
+            android:layout_marginBottom="5dp">
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
+                android:gravity="center"
+                android:drawableLeft="@drawable/email"
                 android:textColorHint="@color/colorPrimaryDark"
                   android:inputType="textEmailAddress"
                 android:maxLines="1"
@@ -100,6 +167,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                android:gravity="center"
+                android:drawableLeft="@drawable/psswrd"
                 android:textColorHint="@color/colorPrimaryDark"
                 android:textColor="@android:color/black"
                 android:inputType="textPassword"
@@ -114,33 +183,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="#FF1BCC0B"
+            android:background="@color/red"
             android:text="Signup"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
-
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/dark_gray" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
         <Button
             android:id="@+id/sign_in_button"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
             android:background="@null"
+            android:padding="3dp"
             android:text="Already User"
             android:textAllCaps="false"
-            android:textColor="@android:color/black"
-            android:textSize="15dp" />
+            android:textColor="@android:color/black"/>
 
         <Button
             android:id="@+id/btn_reset_password"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
             android:background="@null"
+            android:padding="3dp"
             android:text="Forgot Password"
             android:textAllCaps="false"
             android:textColor="@color/darker_blue" />
         <!-- Link to Login Screen -->
-
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>
 
