@@ -101,7 +101,7 @@ public class Admin extends AppCompatActivity {
                           Uri downloaduri=taskSnapshot.getDownloadUrl();
                           DatabaseReference databaseReference=mref.push();
 
-                          databaseReference.child("Name").setValue(name);
+                            databaseReference.child("Name").setValue(name);
                             databaseReference.child("Homeaddress").setValue(jaddress);
                             databaseReference.child("Price").setValue(price);
                             databaseReference.child("Effi").setValue(tag);

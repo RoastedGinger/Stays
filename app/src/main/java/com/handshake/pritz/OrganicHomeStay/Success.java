@@ -13,6 +13,10 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +27,9 @@ import java.util.Date;
 
 public class Success extends AppCompatActivity {
     TextView a,b,c,d,e,f,g,h,i,j,k,l;
-String aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm;
+    private DatabaseReference mdatabase;
+
+    String aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm;
     String url = "https://beholden-effects.000webhostapp.com/Registration_form/add_info1.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +85,12 @@ String aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm;
                 try{
                     sleep(8000);
                     send();
+                   /* FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                    String uid=user.getUid();
+                    mdatabase= FirebaseDatabase.getInstance().getReference().child("User").child(uid);
+                    HashMap<String,String> usermap=new HashMap<>();
+                   String p=aa+"\t"+bb+"\t"+cc+"\t"+dd+"\t"+ee+"\t"+ff+"\t"+gg+"\t"+hh+"\t"+ii+"\t"+jj+"\t"+kk+"\t"+ll+"\n";
+                    usermap.put("Details",p);*/
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }finally{

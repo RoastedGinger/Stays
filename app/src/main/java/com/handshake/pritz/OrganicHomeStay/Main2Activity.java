@@ -87,7 +87,7 @@ String aname,aaddress,aimage,aprice;
         del=findViewById(R.id.del);
         update=findViewById(R.id.update);
         hname=findViewById(R.id.hname);
-        load=findViewById(R.id.lod);
+     //   load=findViewById(R.id.lod);
         himage=findViewById(R.id.himage);
         haddress=findViewById(R.id.haddress);
         hprice=findViewById(R.id.hprice);
@@ -104,6 +104,7 @@ String aname,aaddress,aimage,aprice;
                 progressBar.setVisibility(View.VISIBLE);
 // Hide progress bar on successful load
                 Picasso.with(Main2Activity.this).load(aimage)
+                        .placeholder(R.mipmap.file_icon)
                         .into(himage, new com.squareup.picasso.Callback() {
                             @Override
                             public void onSuccess() {

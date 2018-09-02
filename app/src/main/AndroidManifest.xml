@@ -65,7 +65,7 @@
         <activity
             android:name=".Form"
             android:label="Check-In ~ Check-Out"
-            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.Main2Activity">
+            android:parentActivityName="com.handshake.pritz.OrganicHomeStay.MainActivity">
         </activity>
         <activity
             android:name=".Formfilling"

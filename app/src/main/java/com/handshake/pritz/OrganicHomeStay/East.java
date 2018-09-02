@@ -131,6 +131,10 @@ public class East extends AppCompatActivity {
         public void setHomestayPic(Context ctx, String image) {
             ImageView post=view.findViewById(R.id.hotelpic);
             Picasso.with(ctx).load(image).into(post);
+            Picasso.with(ctx)
+                    .load(image)
+                    .placeholder(R.mipmap.file_icon)
+                    .into(post);
         }
         public void setPrice(String Pprice) {
             TextView jo=view.findViewById(R.id.rate);

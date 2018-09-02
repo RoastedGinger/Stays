@@ -42,8 +42,8 @@
                         app:fontFamily="cursive" />
 
                     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                         android:layout_width="150dp"
-                        android:layout_height="150dp"
+                        android:layout_width="150sp"
+                        android:layout_height="150sp"
                         android:layout_gravity="center"
                         android:src="@drawable/girl"
                          app:civ_border_color="@android:color/black"
@@ -52,94 +52,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="3dp"
                         android:background="#0d0d0c" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:text="Gangtok"
-                        android:textColor="@android:color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        app:fontFamily="cursive" />
-
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/profile_image"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/gng"
-                        app:civ_border_color="#FF000000"
-                        app:civ_border_width="2dp" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginTop="5dp"
-                        android:text="Namchi"
-                        android:textColor="@android:color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        app:fontFamily="cursive" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="right"
-                        android:src="@drawable/namchi"
-                        app:civ_border_color="#FF000000"
-                        app:civ_border_width="2dp" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="5dp"
-                        android:text="Mangan"
-                        android:textColor="@android:color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        app:fontFamily="cursive" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="left"
-                        android:src="@drawable/norh"
-                        app:civ_border_color="#FF000000"
-                        app:civ_border_width="2dp" />
-
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginTop="5dp"
-                        android:text="Geyzing"
-                        android:textColor="@android:color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        app:fontFamily="cursive" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="right"
-                        android:src="@drawable/west"
-                        app:civ_border_color="#FF000000"
-                        app:civ_border_width="2dp" />
-
-
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <Button
+                    <Button
                         android:id="@+id/b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -199,6 +112,9 @@
                         android:text="Login.."
                         android:textColor="@android:color/black"
                         android:visibility="gone" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
                 </LinearLayout>
 
 
