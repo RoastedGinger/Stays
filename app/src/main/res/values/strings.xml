@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OrganicHomeStays</string>
+    <string name="app_name">HomeStays</string>
     <string name="todo">TODO</string>
     <string name="category">Category:</string>
     <string name="price">Price</string>

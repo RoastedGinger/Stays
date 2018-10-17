@@ -5,70 +5,47 @@
     android:layout_width="match_parent"
     android:background="@android:color/white"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
     tools:context="com.handshake.pritz.OrganicHomeStay.Splash">
 
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:cropToPadding="true"
-                android:src="@drawable/log"
-                tools:ignore="ContentDescription"></ImageView>
-
     <TextView
-        android:id="@+id/tfy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView3"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:text="@string/powered_by_cydes_technology"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_gravity="center"
-        android:layout_toEndOf="@+id/v"
-        android:layout_toRightOf="@+id/v"
-        android:text="Sikkim"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Organic HomeStays"
         android:textColor="@android:color/black"
-        android:textSize="13sp"
-        android:textStyle="bold" />
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tfy"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/tfy"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginBottom="23dp"
-        android:layout_marginLeft="58dp"
-        android:layout_marginStart="58dp"
-        android:text="Secured by-"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Made with Love in Sikkim"
         android:textColor="@android:color/black"
-        android:textSize="10sp"
-        android:textStyle="bold" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
 
     <ImageView
-        android:id="@+id/v"
-        android:layout_width="80dp"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="67dp"
         android:adjustViewBounds="true"
-        android:cropToPadding="true"
-        android:src="@drawable/h"
-        tools:ignore="ContentDescription"></ImageView>
+        app:srcCompat="@drawable/log" />
+
 
 </RelativeLayout>

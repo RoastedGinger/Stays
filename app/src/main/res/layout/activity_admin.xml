@@ -7,31 +7,40 @@
     android:orientation="vertical"
     android:padding="5dp"
     tools:context="com.handshake.pritz.OrganicHomeStay.Admin">
-    <ImageButton
-        android:id="@+id/hotelpic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:adjustViewBounds="true"
-        android:background="@color/colorPrimaryDark"
-        android:contentDescription="@string/todo"
-        android:elevation="1dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@mipmap/add_btn" />
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbarSize="5dp">
 
-
-
-            <LinearLayout
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="15dp"
+                android:padding="12dp"
                  android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@android:color/darker_gray"
+                app:cardElevation="3dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                    android:id="@+id/hotelpic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="@color/colorPrimaryDark"
+                    android:contentDescription="@string/todo"
+                    android:elevation="1dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@mipmap/add_btn" />
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -110,8 +119,277 @@
                     android:paddingTop="15dp"
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/colorAccent" />
+        </LinearLayout>
+            </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@android:color/darker_gray"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                              android:text="Services"
+                            android:textColor="@color/colorPrimaryDark"
+
+                             android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chk_wifi"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="WiFi"
+                                />
+
+                            <CheckBox
+                                android:id="@+id/chk_ac"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="AC"
+                             />
+
+                            <CheckBox
+                                android:id="@+id/chk_breakfast"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Breakfast"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chk_lunch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Lunch"
+                              />
+
+                            <CheckBox
+                                android:id="@+id/chk_dinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Dinner"
+                                  />
+
+                            <CheckBox
+                                android:id="@+id/chk_parking"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Parking"
+                              />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chk_purifiedwater"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="R.O. Water"
+                               />
+
+                            <CheckBox
+                                android:id="@+id/chk_security"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Security"
+                                />
+
+                            <CheckBox
+                                android:id="@+id/chk_tv"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="TV"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chk_hotwater"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:padding="10dp"
+                                android:text="Hot Water"/>
+
+                            <CheckBox
+                                android:id="@+id/chk_refrigerator"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:padding="10dp"
+                                android:text="Refrigerator"
+                            />
+                            <CheckBox
+                                android:id="@+id/chk_ffrefrigerator"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:padding="10dp"
+                                android:text="Hard Drinks"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@android:color/darker_gray"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                              android:text="Preference"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
 
 
+                        <LinearLayout
+                            android:id="@+id/layout_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/radBtn_Individual"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                     android:padding="10dp"
+                                    android:text="Individual"
+                                     />
+
+                                <RadioButton
+                                    android:id="@+id/radBtn_Sharing"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                     android:padding="10dp"
+                                    android:text="Sharing"
+                                    />
+
+                                <RadioButton
+                                    android:id="@+id/rad_both_pref"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                     android:padding="10dp"
+                                    android:text="Both"
+                                     />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                             android:textStyle="bold"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="Gender Preference"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/layout_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/radBtn_male"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                     android:padding="10dp"
+                                    android:text="Male"
+                                      />
+
+                                <RadioButton
+                                    android:id="@+id/radBtn_female"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                     android:padding="10dp"
+                                    android:text="Female"
+                                     />
+
+                                <RadioButton
+                                    android:id="@+id/rad_both_gender"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                     android:padding="10dp"
+                                    android:text="Both"
+                                     />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
                 <Button
                     android:id="@+id/send"
                     android:layout_width="match_parent"

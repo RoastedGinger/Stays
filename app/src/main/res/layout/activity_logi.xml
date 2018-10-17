@@ -11,50 +11,53 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@android:color/white"
-        android:gravity="center"
         android:padding="25dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Organic Home Stays"
+            android:text="Organic HomeStays"
             android:textColor="@android:color/black"
-            android:textSize="25dp"
+            android:textSize="40dp"
             android:layout_marginBottom="25sp"
             android:textStyle="bold"
             app:fontFamily="cursive" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="right"
-            android:src="@drawable/namchi"
-            android:padding="3dp"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp" />
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="right"
-            android:src="@drawable/gng"
-            android:padding="3dp"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp" />
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="right"
-            android:padding="3dp"
-            android:src="@drawable/norh"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp" />
-    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:src="@drawable/namchi"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:src="@drawable/gng"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:src="@drawable/norh"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+        </LinearLayout>
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="30dp"
@@ -87,15 +90,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@android:color/white"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:orientation="vertical"
                 android:padding="25dp">
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-
-            >
+            android:layout_marginBottom="5dp">
 
             <EditText
                 android:id="@+id/email"
@@ -140,6 +141,38 @@
                     android:background="@color/red"
                     android:text="Login"
                     android:textColor="@android:color/white" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- Link to Login Screen -->
+
+                    <Button
+                        android:id="@+id/btn_reset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:text="Forgot Password"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/holo_blue_dark" />
+
+                    <Button
+                        android:id="@+id/btn_signupp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:background="@null"
+                        android:text="New User"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
     </LinearLayout>
 
         </android.support.v7.widget.CardView>
@@ -148,39 +181,21 @@
             android:layout_height="0.5dp"
             android:background="@color/dark_gray" />
         <!-- Login Button -->
-        <LinearLayout
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/dark_gray" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <!-- Link to Login Screen -->
-
-            <Button
-                android:id="@+id/btn_reset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:background="@null"
-                android:text="Forgot Password"
-                android:textAllCaps="false"
-                android:textColor="@color/colorAccent" />
-
-            <Button
-                android:id="@+id/btn_signupp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@null"
-                android:text="Signup"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15dp" />
-
-
-        </LinearLayout>
-
+            android:layout_gravity="center"
+            android:layout_marginBottom="25sp"
+            android:paddingTop="10dp"
+            android:text="Made with Love in Sikkim"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

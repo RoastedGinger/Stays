@@ -96,7 +96,7 @@ public class Formfilling extends AppCompatActivity {
     }
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     public void Generatechecksum() {
-        String url = "https://beholden-effects.000webhostapp.com/organichome1/checksum.php";
+        String url = "https://www.sikkimprepaidtaxi.com/organichome1/checksum.php";
             StringRequest request = new StringRequest(Request.Method.POST,url,
                     new Response.Listener<String>() {
                         @Override
@@ -150,7 +150,7 @@ public class Formfilling extends AppCompatActivity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
     public void onStartTransaction (){
-        String url = "https://beholden-effects.000webhostapp.com/organichome1/checksum.php";
+        String url = "https://www.sikkimprepaidtaxi.com/organichome1/checksum.php";
         PaytmPGService Service = PaytmPGService.getProductionService();
         HashMap<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("CALLBACK_URL", "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID="+orderID);

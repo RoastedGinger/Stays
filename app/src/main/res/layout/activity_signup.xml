@@ -13,16 +13,15 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@android:color/white"
-        android:gravity="center"
         android:padding="25dp"
         android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Organic Home Stays"
+        android:text="Organic HomeStays"
         android:textColor="@android:color/black"
-        android:textSize="25dp"
+        android:textSize="40dp"
         android:layout_marginBottom="25sp"
         android:textStyle="bold"
         app:fontFamily="cursive" />
@@ -30,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -92,7 +91,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@android:color/white"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:orientation="vertical"
         android:padding="25dp">
 
@@ -118,9 +117,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-
-            >
+            android:layout_marginBottom="5dp">
 
             <EditText
                 android:id="@+id/phonenumber"
@@ -187,41 +184,52 @@
             android:text="Signup"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_reset_password"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:layout_marginTop="20dip"
+                android:background="@null"
+                android:text="Forgot Password"
+                android:textAllCaps="false"
+                android:textColor="@color/blue" />
+
+            <Button
+                android:id="@+id/sign_in_button"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:layout_marginTop="20dip"
+                android:background="@null"
+                android:text="Already User"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <!-- Link to Login Screen -->
+        </LinearLayout>
     </LinearLayout>
     </android.support.v7.widget.CardView>
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/dark_gray" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/sign_in_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:background="@null"
-            android:padding="3dp"
-            android:text="Already User"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"/>
 
-        <Button
-            android:id="@+id/btn_reset_password"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:background="@null"
-            android:padding="3dp"
-            android:text="Forgot Password"
-            android:textAllCaps="false"
-            android:textColor="@color/darker_blue" />
-        <!-- Link to Login Screen -->
-    </LinearLayout>
+            android:layout_gravity="center"
+            android:layout_marginBottom="25sp"
+            android:paddingTop="10dp"
+            android:text="Made with Love in Sikkim"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>
 

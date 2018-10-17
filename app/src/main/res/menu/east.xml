@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="SORT"
+        app:showAsAction="always" />
+    <group
+        android:checkableBehavior="all">
+    <item
+         android:title="Price high to low"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/search"
+        android:title="Price low to high"
+        app:showAsAction="never" />
+    </group>
+    <item
+        android:title="Sharing"
+        app:showAsAction="never" />
+    <item
+        android:title="Individual"
+        app:showAsAction="never" />
+    <item
+         android:title="Male"
+        app:showAsAction="never" />
+    <item
+        android:title="Female"
+        app:showAsAction="never" />
+    <group
+        android:checkableBehavior="single">
+        <item android:title="Arithang" />
+        <item android:title="Development Area" />
+        <item android:title="DPH"/>
+        <item android:title="Deorali" />
+        <item android:title="Tadong" />
+        <item android:title="Tathangchang" />
+        <item android:title="5th Mile" />
+        <item android:title="Ranipool" />
+        <item android:title="Assam Linzey" />
+        <item android:title="Pakyong" />
+        <item android:title="Marchak" />
+    </group>
+
+
+</menu>

@@ -37,7 +37,7 @@ TextView nme,eme,phe;
                 final String nmeh=  dataSnapshot.child("Name").getValue().toString();
                 final String   pheh =  dataSnapshot.child("Phone").getValue().toString();
                 final String  emeh= dataSnapshot.child("Email").getValue().toString();
-                final String mhe=dataSnapshot.child("Details").getValue().toString();
+            //    final String mhe=dataSnapshot.child("Details").getValue().toString();
                 phe.setText(pheh);
                 eme.setText(emeh);
                 nme.setText(nmeh);

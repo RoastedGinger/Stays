@@ -31,7 +31,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
+
                     <TextView
+                        android:id="@+id/im"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -42,11 +44,12 @@
                         app:fontFamily="cursive" />
 
                     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/image"
                         android:layout_width="150sp"
                         android:layout_height="150sp"
                         android:layout_gravity="center"
                         android:src="@drawable/girl"
-                         app:civ_border_color="@android:color/black"
+                        app:civ_border_color="@android:color/black"
                         app:civ_border_width="3dp" />
                     <View
                         android:layout_width="match_parent"

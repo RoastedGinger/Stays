@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 Button log;
     EditText new_usrname,new_pass;
     ProgressDialog progressDialog;
+    TextView ims;
     private FirebaseAuth mauth;
     AlertDialog.Builder builder=null;
     AlertDialog dialog=null;
@@ -57,7 +59,15 @@ Button log;
         Button geyzing=findViewById(R.id.c);
         Button namhci=findViewById(R.id.d);
         Button mangan=findViewById(R.id.e);
-
+        ims=findViewById(R.id.im);
+        ims.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Login.class);
+                startActivity(i);
+                finish();
+            }
+        });
         log=findViewById(R.id.log);
         log.setOnClickListener(new View.OnClickListener() {
             @Override
