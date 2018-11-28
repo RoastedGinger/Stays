@@ -1,10 +1,7 @@
 package com.handshake.pritz.OrganicHomeStay;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,17 +10,11 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.Date;
 
 public class Success extends AppCompatActivity {
     TextView a,b,c,d,e,f,g,h,i,j,k,l;

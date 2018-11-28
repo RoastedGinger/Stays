@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import com.squareup.picasso.Picasso;
 
 public class Main2Activity extends AppCompatActivity {
@@ -31,14 +32,14 @@ EditText newPrice;
     AlertDialog.Builder builder=null;
     AlertDialog dialog=null;
     ProgressDialog progressDialog;
-TextView hname,haddress,hprice,load;
+TextView hname,haddress,hprice,load,abbbout;
 ProgressBar progressBar;
 DatabaseReference mref;
       String message;
       String root;
 ImageView himage;
     String postid;
-String aname,aaddress,aimage,aprice;
+String aname,aaddress,aimage,aprice,abs;
     private FirebaseAuth mauth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -91,6 +92,7 @@ String aname,aaddress,aimage,aprice;
         himage=findViewById(R.id.himage);
         haddress=findViewById(R.id.haddress);
         hprice=findViewById(R.id.hprice);
+        abbbout=findViewById(R.id.about);
         mref.child(message).addValueEventListener(new ValueEventListener() {
             @Override
              public void onDataChange(DataSnapshot dataSnapshot) {
@@ -99,6 +101,7 @@ String aname,aaddress,aimage,aprice;
                 aprice=(String) dataSnapshot.child("Price").getValue();
                 aimage=(String) dataSnapshot.child("HomestayPic").getValue();
                 postid=(String)dataSnapshot.child("postid").getValue();
+                abs=(String)dataSnapshot.child("About").getValue();
 
                 // Show progress bar
                 progressBar.setVisibility(View.VISIBLE);
@@ -126,6 +129,7 @@ String aname,aaddress,aimage,aprice;
                 hname.setText(aname);
                 haddress.setText(aaddress);
                 hprice.setText(aprice+"/-");
+                abbbout.setText(abs);
 
             }
 

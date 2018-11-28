@@ -20,11 +20,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 public class Admin extends AppCompatActivity {
-    EditText a, b, d;
+    EditText a, b, d,aby;
     Spinner spinner;
     public ImageButton imageButton;
     Button button;
@@ -56,6 +57,7 @@ public class Admin extends AppCompatActivity {
         a =  findViewById(R.id.name);
        b =  findViewById(R.id.Haddress);
          d =   findViewById(R.id.price);
+         aby=findViewById(R.id.aboutt);
         imageButton =  findViewById(R.id.hotelpic);
         button =   findViewById(R.id.send);
         progressDialog = new ProgressDialog(this);
@@ -88,7 +90,7 @@ public class Admin extends AppCompatActivity {
                 final String name = a.getText().toString();
                 final String jaddress = b.getText().toString();
                 final String price = d.getText().toString();
-
+                final String abou=aby.getText().toString();
 
                 if ((img != null && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(jaddress) && !TextUtils.isEmpty(price))) {
                    progressDialog.setMessage("Uploading Please Wait...");
@@ -105,6 +107,7 @@ public class Admin extends AppCompatActivity {
                             databaseReference.child("Homeaddress").setValue(jaddress);
                             databaseReference.child("Price").setValue(price);
                             databaseReference.child("Effi").setValue(tag);
+                            databaseReference.child("About").setValue(abou);
                             databaseReference.child("postid").setValue(currentuser.getUid());
                             databaseReference.child("HomestayPic").setValue(downloaduri.toString());
                             progressDialog.dismiss();

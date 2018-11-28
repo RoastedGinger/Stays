@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="Organic HomeStays"
+        android:text="HomeStays"
         android:textColor="@android:color/black"
         android:textSize="30dp"
         android:textStyle="bold"

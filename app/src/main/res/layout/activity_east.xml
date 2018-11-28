@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.handshake.pritz.OrganicHomeStay.East">
     <ProgressBar
         android:id="@+id/progressBar"
@@ -17,7 +17,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" tools:targetApi="lollipop"/>
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/postinsta"
         android:layout_width="match_parent"
@@ -26,10 +25,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:clipToPadding="false"
-        android:dividerHeight="2.0sp"></android.support.v7.widget.RecyclerView>
-
-
-
+        android:dividerHeight="2.0sp">
+    </android.support.v7.widget.RecyclerView>
     <Button
         android:id="@+id/addmore"
         android:layout_width="fill_parent"
@@ -38,9 +35,8 @@
          android:layout_margin="5dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:background="@color/red"
+        android:background="@color/common_google_signin_btn_text_dark_pressed"
         android:text="Add More"
         android:visibility="gone"
-        android:textColor="@android:color/white" />
-
+        android:textColor="@android:color/black" />
 </RelativeLayout>
